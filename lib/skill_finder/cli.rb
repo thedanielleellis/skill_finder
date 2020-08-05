@@ -3,7 +3,8 @@ class CLI
     
     def run
         system("clear")
-        greeting
+        greeting 
+
         #Menu
         while menu != 'exit'
         end
@@ -11,18 +12,35 @@ class CLI
     end
 
     def greeting
-        puts "Welcome to the Unique Skill Finder. Which subject would you like to learn a unqiue skill to set you apart from the crowd?"
+        puts " "
+        puts "~~~ Welcome to the Unique Skill Finder! ~~~".colorize(:red)
+        puts " "
+        puts "We are here to set you apart from the crowd and help you learn a new skill that will ignite passion or make you more marketable." 
+        puts " "
+        puts "Are you up for the challenge? y or n" 
+        @prompt_input = gets.strip.downcase
+        menu if challenge_accept(@prompt_input)
     end
 
+
     def end_program
-        puts "Bye"
+        puts "Thank you for stopping by! \nJust remember, you can do anything you set your mind to, but it takes action, perseverance, and facing your fears by Gillian Anderson"
     end
 
     def menu
-        puts "Choose option"
+        puts " "
+        puts "Which subject would you like to learn a unqiue skill?"
         list_options
         input = gets.strip.downcase
+        choose_option(input)
         return input
+    end 
+
+    def challenge_accept(prompt_input)
+     if prompt_input == "y" || prompt_input == "yes"
+        menu
+        end
+        end_program  
     end 
 
     def list_options
@@ -32,7 +50,9 @@ class CLI
         3. Arts/Craft
         4. Reading/Writing 
         DOC
-        @skills = Skill.all
+        
+        #Coming back to this 
+        # @skills = Skill.all
     end
 
     #From video
