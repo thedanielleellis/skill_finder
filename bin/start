@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/skill_finder.rb"
+
+
+#This starts the program
+SkillFinder::CLI.new.run 
