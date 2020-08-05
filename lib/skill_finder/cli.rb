@@ -1,4 +1,4 @@
-class SkillFinder::CLI
+class CLI
     # greet user, run cli
     
     def run
@@ -26,13 +26,20 @@ class SkillFinder::CLI
     end 
 
     def list_options
-        puts <<-DOC.gsub /^\s*/, ' 'exit
+        puts <<-DOC.gsub /^\s*/, ' '
         1. Sports
         2. Cooking
         3. Arts/Craft
         4. Reading/Writing 
         DOC
+        @skills = Skill.all
     end
+
+    #From video
+    # @deals = DailyDeal::Deal.today (@skills = SkillFinder::Skill.all)
+    # I want to have a class method called Deal today that returns a whole bunch of deals
+    # This is where I want to start programming. Using today instead of all 
+    # I am creating skills.rb 
 
     def choose_option(option)
         case option

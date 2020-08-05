@@ -5,4 +5,4 @@ module SkillFinder
   # Your code goes here...
 end
 
-require_relative "skill_finder/cli"
+
